@@ -1,6 +1,6 @@
 # gulp-px2rpx
 
-微信小程序 px转换为rpx
+WeChat Mini Program px to rpx converter
 
 ## Installation
 
@@ -17,9 +17,9 @@ const px2rpx = require('gulp-px2rpx');
 gulp.task('default', function () {
   gulp.src('./css/*.css')
     .pipe(px2rpx({
-        screenWidth: 750, // 设计稿屏幕, 默认750
-        wxappScreenWidth: 750, // 微信小程序屏幕, 默认750
-        remPrecision: 6 // 小数精度, 默认6
+        screenWidth: 750, // Default screen width: 750
+        wxappScreenWidth: 750, // WeChat Mini Program screen width: 750
+        remPrecision: 6 // Fractional precision, default 6
     }))
     .pipe(gulp.dest('./wxappCss'))
 });
