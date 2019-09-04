@@ -1,13 +1,13 @@
 'use strict';
 
-var util = require('gulp-util');
-var PluginError = util.PluginError;
-var through = require('through2');
-var extend = require('extend');
+//var util = require('gulp-util');  // gulp-util is deprecated
+const PluginError = require('plugin-error');
+const through = require('through2');
+const extend = require('extend');
 
-var PLUGIN_NAME = 'gulp-px2rpx';
+const PLUGIN_NAME = 'gulp-px2rpx';
 
-var defaultConfig = {
+let defaultConfig = {
     unit: 'rpx', // 单位
     replaceUnit: 'px', // 被替换的
     screenWidth: 750, // 设计稿屏幕
@@ -16,9 +16,9 @@ var defaultConfig = {
 };
 function gulpPx2Rpx (options) {
     options = extend({}, defaultConfig, options);
-    var reg = new RegExp('([\\d.]*\\d)' + options.replaceUnit, 'g');
-    var ratio = options.wxappScreenWidth / options.screenWidth;
-    var remPrecision = options.remPrecision;
+    let reg = new RegExp('([\\d.]*\\d)' + options.replaceUnit, 'g');
+    let ratio = options.wxappScreenWidth / options.screenWidth;
+    let remPrecision = options.remPrecision;
     function getValue(val) {
       val = parseFloat(val.toFixed(remPrecision)); // control decimal precision of the calculated value
       return val == 0 ? val : val + options.unit;
