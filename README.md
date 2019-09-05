@@ -12,9 +12,9 @@ $ npm install --save-dev gulp-px2rpx
 
 ```js
 const gulp = require('gulp');
-const px2rpx = require('gulp-px2rpx');
+const px2rpx = require('gulp-wx_px2rpx');
 
-gulp.task('default', function () {
+gulp.task('default', function (done) {
   gulp.src('./css/*.css')
     .pipe(px2rpx({
         screenWidth: 750, // Default screen width: 750
@@ -22,5 +22,6 @@ gulp.task('default', function () {
         remPrecision: 6 // Fractional precision, default 6
     }))
     .pipe(gulp.dest('./wxappCss'))
+    done();
 });
 ```
