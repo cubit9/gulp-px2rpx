@@ -1,11 +1,11 @@
-# gulp-px2rpx
+# gulp-wx_px2rpx
 
 WeChat Mini Program px to rpx converter
 
 ## Installation
 
 ```shell
-$ npm install --save-dev gulp-px2rpx
+$ npm install --save-dev gulp-wx_px2rpx
 ```
 
 ## Usage
